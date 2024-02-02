@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
     openssh-client \
     python3 \
     python3-pip \
+    python3-venv \
     texlive
 
 RUN python3 -m venv /venv
