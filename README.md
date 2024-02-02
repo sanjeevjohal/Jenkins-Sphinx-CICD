@@ -80,3 +80,15 @@ ngrok http 8080
 
 ## Validate AWS tags
 
+---
+# Troubleshoot
+1. If you get `docker command not found` then add this to the plist file: `homebrew.mxcl.jenkins-lts 
+   copy.plist` which can be found by `brew info jenkins-lts` and then `brew services restart jenkins-lts`
+```xml
+<key>EnvironmentVariables</key>
+<dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/docker</string>
+</dict>
+```
+
