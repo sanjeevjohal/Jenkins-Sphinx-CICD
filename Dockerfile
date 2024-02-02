@@ -8,6 +8,11 @@ RUN apt-get update && apt-get install -y \
     python3-venv \
     texlive
 
+# Create and activate a virtual environment
 RUN python3 -m venv /venv
+ENV PATH="/venv/bin:$PATH"
+
+# Install virtualenv inside the virtual environment
+RUN /venv/bin/pip install virtualenv
 
 CMD ["/bin/bash"]
