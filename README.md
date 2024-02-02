@@ -14,7 +14,9 @@
 1. Ensure this plugin [link](https://plugins.jenkins.io/github/) is enabled - should have been installed as part 
    of the recommended plugins)
 2. Go to `Manage Jenkins` > `Configure System` > `GitHub` > `Add GitHub Server`
-3. Add your credentials - see password repositories for secret token...and **test**
+3. Add your credentials - see password repositories for secret token...and **test** (NB. what access 
+   was granted when the token was created, so if `public_repo` was granted then ensure the repo is 
+   **public**)
 4. Could let jenkins manage the hook which will create a webhook in the repository but to do manually
    5. Generate a ssh key pair
    6. Add the public key to the repository
@@ -57,7 +59,16 @@ ngrok http 8080
 ```
 13. Use the `forwarding` || "/github-webhook/" url to add the webhook to the repository and disable 
     the SSL and **test ie deliver payload & commit code**
----
 
+## Troublshooting
+1. Use `http://127.0.0.1:4040/inspect/http` to see the requests and responses
+
+---
 # Projects
 ## Auto-generate Sphinx documentation
+### Objectives
+- [ ] Create a Jenkins pipeline to auto-generate Sphinx documentation
+- [ ] Add link to Apache Airflow project
+---
+
+## Validate AWS tags
