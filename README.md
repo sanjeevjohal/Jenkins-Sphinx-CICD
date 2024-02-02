@@ -66,6 +66,13 @@ ngrok http 8080
 ---
 # Projects
 ## Auto-generate Sphinx documentation
+
+### Links
+- [CI using docker](https://www.jareddillard.com/blog/continuous-deployment-of-a-sphinx-website-with-using-jenkins-and-docker.html)
+  - [Live demo](https://github.com/jdillard/continuous-sphinx)
+  - [Jdillard Sphinx Links](https://github.com/jdillard?tab=repositories&q=sphinx&type=&language=&sort=)
+- [Jenkins HTML Publisher Plugin](https://plugins.jenkins.io/htmlpublisher/)
+
 ### Objectives
 - [ ] Create a Jenkins pipeline to auto-generate Sphinx documentation
 - [ ] Add link to Apache Airflow project
