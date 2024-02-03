@@ -50,9 +50,9 @@ pipeline {
                 '''
             }
             post {
-                always {
-                    sh 'cat ${SPHINX_DIR}/rsync.log'
-                }
+//                 always {
+//                     sh 'cat ${SPHINX_DIR}/rsync.log'
+//                 }
                 failure {
                     sh 'cat ${SPHINX_DIR}/rsync.log'
                 }

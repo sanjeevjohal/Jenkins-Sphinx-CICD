@@ -86,6 +86,8 @@ ngrok http 8080
 ### Objectives
 - [ ] Create a Jenkins pipeline to auto-generate Sphinx documentation
 - [ ] Add link to Apache Airflow project
+- [ ] Make my own
+- [ ] improve pipeline readability e.g. use stages, add comments ...
 ---
 
 ## Validate AWS tags
