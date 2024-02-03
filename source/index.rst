@@ -18,6 +18,7 @@ Modules
 
    foobar.foo
    foobar.foo.moduleA
+   foobar.foo.moduleB
    foobar.bar
    foobar.bar.baz
    foobar.bar.baz.moduleB
