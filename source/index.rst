@@ -7,7 +7,7 @@ Welcome to foobar's documentation!
 ==================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :caption: Contents:
 
 Modules
@@ -17,8 +17,10 @@ Modules
    :toctree: modules
 
    foobar.foo
+   foobar.foo.moduleA
    foobar.bar
    foobar.bar.baz
+   foobar.bar.baz.moduleB
 
 Indices and tables
 ==================
