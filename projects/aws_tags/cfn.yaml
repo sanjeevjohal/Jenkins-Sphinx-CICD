@@ -1,0 +1,12 @@
+parameters:
+  Env: nonprod
+
+stacks:
+  test_bucket:
+    name: bucketa
+    tags:
+      service: service
+      criticalsystem: 'true'
+      publiclyaccessible: no
+      creator: sanjeevjohal@hotmail.com
+      maintainer: sanjeevjohal@hotmail.com

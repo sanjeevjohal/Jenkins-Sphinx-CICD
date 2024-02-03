@@ -98,7 +98,7 @@ brew services start jenkins-lts
 ```
 2. Add another module to `foo` with docstrings
 3. Include this in `index.rst`
-4. Start `ngrok` and add the webhook to the repository and **test**
+4. Start `ngrok` and add the webhook to the **GITHUB** repository and **test**
 5. Push the code to the repository and see the Jenkins build
 5. Start a local server to see the documentation
 ```shell
