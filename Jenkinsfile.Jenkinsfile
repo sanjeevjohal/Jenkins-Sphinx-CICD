@@ -76,6 +76,6 @@ pipeline {
 //                     sh 'cat ${SPHINX_DIR}/rsync.log'
 //                 }
 //             }
-//         }
+        }
     }
 }
