@@ -9,7 +9,8 @@ pipeline {
                     def yaml = readYaml file: 'projects/aws_tags/cfn.yaml'
 
                     // Define the required tags
-                    def requiredTags = ['service', 'criticalsystem', 'publiclyaccessible', 'creator', 'maintainer']
+                    def requiredTags = ['service', 'criticalsystem', 'publiclyaccessible', 'creator',
+                    'maintainer', 'test']
 
                     // Check if the required tags are present
                     requiredTags.each { tag ->
