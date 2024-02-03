@@ -11,7 +11,7 @@ pipeline {
         SOURCE_DIR  = './source'
         // DEPLOY_HOST = 'deployer@www.example.com:/path/to/docs/'
         // deploy to local directory for testing
-        DEPLOY_HOST = '/tmp/sj_docsx/'
+        DEPLOY_HOST = '/tmp/sj_docs/'
     }
     stages {
         stage('Install Dependencies') {

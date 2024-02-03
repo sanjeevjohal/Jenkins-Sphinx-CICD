@@ -87,7 +87,7 @@ ngrok http 8080
 - [ ] Create a Jenkins pipeline to auto-generate Sphinx documentation
 - [ ] Add link to Apache Airflow project
 - [ ] Make my own
-- [ ] improve pipeline readability e.g. use stages, add comments ...
+- [ ] improve pipeline readability e.g. use stages, add comments, make stages more modular & descriptive
 ---
 
 ## Validate AWS tags
