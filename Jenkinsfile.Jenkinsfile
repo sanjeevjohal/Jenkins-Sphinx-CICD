@@ -42,6 +42,19 @@ pipeline {
                 }
             }
         }
+        stage('Check BUILD_DIR is not empty') {
+            steps {
+                sh 'ls -l ${BUILD_DIR}'
+            }
+        }
+        stage('Check Links') {
+            steps {
+                sh '''
+                   ${WORKSPACE}/pyenv/bin/sphinx-build \
+                   -q -n -T -b linkcheck \
+                   -d ${BUILD_DIR}/doctrees ${SOURCE_DIR} ${BUILD_DIR}
+                '''
+            }
         stage('Deploy-Local') {
             steps {
                 sh '''#!/bin/bash
