@@ -2,7 +2,7 @@ pipeline {
     agent {
         dockerfile {
           filename "Dockerfile"
-          args "-u root" // root is necessary for virtualenv
+          args "-u root -v /tmp/sj_docs/:/tmp/sj_docs/" // mount the local directory
         }
     }
     environment {
