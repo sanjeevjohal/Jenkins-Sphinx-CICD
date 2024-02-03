@@ -9,6 +9,9 @@ class SequenceOn:
    init_done = False
 
 class B:
+    """
+    DocString Example in ClassB
+    """
     def __init__(self):
         pass
 

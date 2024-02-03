@@ -1,1 +1,7 @@
+# ignore pycharm files
 /.idea/*
+
+# ignore any local build attempts
+_built
+sphinx-build.log
+source/modules

@@ -42,25 +42,40 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Deploy-Local') {
             steps {
-                sshagent(credentials: ['deployer']) {
-                   sh '''#!/bin/bash
-                      rm -f ${SPHINX_DIR}/rsync.log
-                      RSYNCOPT=(-aze 'ssh -o StrictHostKeyChecking=no')
-                      rsync "${RSYNCOPT[@]}" \
-                      --exclude-from=${SPHINX_DIR}/rsync-exclude.txt \
-                      --log-file=${SPHINX_DIR}/rsync.log \
-                      --delete \
-                      ${BUILD_DIR}/ ${DEPLOY_HOST}
-                    '''
-                }
+                sh '''#!/bin/bash
+                   rm -f ${SPHINX_DIR}/rsync.log
+                   cp -r ${BUILD_DIR}/ ${DEPLOY_HOST}
+                '''
             }
             post {
+                always {
+                    sh 'cat ${SPHINX_DIR}/rsync.log'
+                }
                 failure {
                     sh 'cat ${SPHINX_DIR}/rsync.log'
                 }
             }
-        }
+//         stage('Deploy') {
+//             steps {
+//                 sshagent(credentials: ['deployer']) {
+//                    sh '''#!/bin/bash
+//                       rm -f ${SPHINX_DIR}/rsync.log
+//                       RSYNCOPT=(-aze 'ssh -o StrictHostKeyChecking=no')
+//                       rsync "${RSYNCOPT[@]}" \
+//                       --exclude-from=${SPHINX_DIR}/rsync-exclude.txt \
+//                       --log-file=${SPHINX_DIR}/rsync.log \
+//                       --delete \
+//                       ${BUILD_DIR}/ ${DEPLOY_HOST}
+//                     '''
+//                 }
+//             }
+//             post {
+//                 failure {
+//                     sh 'cat ${SPHINX_DIR}/rsync.log'
+//                 }
+//             }
+//         }
     }
 }
