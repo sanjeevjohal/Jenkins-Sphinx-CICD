@@ -3,3 +3,4 @@ sphinx-sitemap
 sphinx-gitstamp
 sphinx-notfound-page
 sphinx-rtd-theme
+sphinx-last-updated-by-git

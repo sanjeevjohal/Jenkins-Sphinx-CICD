@@ -33,16 +33,12 @@ release = '1'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
-    'sphinx.ext.todo'
+    'sphinx.ext.todo',
+    'sphinx-last-updated-by-git',
 ]
 
 templates_path = ['_templates']
 exclude_patterns = []
-
-# Add the rst_epilog configuration here
-rst_epilog = """
-.. |date| replace:: {0}
-""".format(time.strftime('%Y-%m-%d %H:%M:%S'))
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
