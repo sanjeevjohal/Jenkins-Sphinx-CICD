@@ -83,16 +83,60 @@ ngrok http 8080
   - [Jdillard Sphinx Links](https://github.com/jdillard?tab=repositories&q=sphinx&type=&language=&sort=)
 - [Jenkins HTML Publisher Plugin](https://plugins.jenkins.io/htmlpublisher/)
 
-### Objectives
+### Sphinx Objectives
 - [ ] Make my own
 - [ ] Create a Jenkins pipeline to auto-generate Sphinx documentation
 - [ ] Add link to Apache Airflow project as a plugin
 - [ ] add callgraph using pyan3 (nb. add to requirements.txt)
 - [ ] add as a webhook to the repository
+---
 
-# Objectives
+### Quick Demo for CafeDay
+1. Start a local Jenkins instance
+```shell
+brew services start jenkins-lts
+```
+2. Add another module to `foo` with docstrings
+3. Include this in `index.rst`
+4. Run the pipeline
+5. Start a local server to see the documentation
+```shell
+cd _built
+python3 -m http.server 8081
+```
+
+---
+
+### Sphinx Troubleshooting
+1. Test locally
+```shell
+export SPHINX_DIR='.'
+export BUILD_DIR='./_built'
+export SOURCE_DIR='./source'
+export DEPLOY_HOST='/tmp/sj_docs/'
+
+sphinx-build \
+-q -w ${SPHINX_DIR}/sphinx-build.log \
+-b html \
+-d ${BUILD_DIR}/doctrees ${SOURCE_DIR} ${BUILD_DIR}
+
+# add '_built', sphinx-build.log & source/modules to .gitignore
+cat << EOF >> .gitignore
+_built
+sphinx-build.log
+source/modules
+EOF
+
+cd $(BUILD_DIR)
+python3 -m http.server 8081
+```
+
+# Overall Objectives
 - [ ] improve pipeline readability e.g. use stages, add comments, make stages more modular & descriptive
 **- [ ] Snapshot local Jenkins instance**
+- [ ] tidy-up this readme.md
+  - move out troubleshooting to a separate file
+  - create separate readme.md for each project
 
 ---
 
