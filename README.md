@@ -84,13 +84,21 @@ ngrok http 8080
 - [Jenkins HTML Publisher Plugin](https://plugins.jenkins.io/htmlpublisher/)
 
 ### Objectives
-- [ ] Create a Jenkins pipeline to auto-generate Sphinx documentation
-- [ ] Add link to Apache Airflow project
 - [ ] Make my own
+- [ ] Create a Jenkins pipeline to auto-generate Sphinx documentation
+- [ ] Add link to Apache Airflow project as a plugin
+- [ ] add callgraph using pyan3 (nb. add to requirements.txt)
+- [ ] add as a webhook to the repository
+
+# Objectives
 - [ ] improve pipeline readability e.g. use stages, add comments, make stages more modular & descriptive
+**- [ ] Snapshot local Jenkins instance**
+
 ---
 
 ## Validate AWS tags
+
+## Test out liquibase-runner
 
 ---
 # Troubleshoot

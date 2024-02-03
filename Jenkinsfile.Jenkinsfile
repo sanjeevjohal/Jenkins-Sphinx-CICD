@@ -63,11 +63,10 @@ pipeline {
                 sh 'echo ${DEPLOY_HOST}'
 
                 // Check the permissions of the DEPLOY_HOST directory
-                sh 'ls -ld ${DEPLOY_HOST}'
+//                 sh 'ls -ld ${DEPLOY_HOST}'
 
-                // Use the -v option with the cp command
                 sh '''#!/bin/bash
-                   cp -rv ${BUILD_DIR}/ ${DEPLOY_HOST}
+                   rsync -avz --delete ${BUILD_DIR}/ ${DEPLOY_HOST}
                 '''
             }
             post {
@@ -81,3 +80,4 @@ pipeline {
 
 // add POST sections to each stage to handle failures
 // add final POST section to handle final cleanup and communication
+// use a buildspec.yml file to define the build process - see Javad's examples

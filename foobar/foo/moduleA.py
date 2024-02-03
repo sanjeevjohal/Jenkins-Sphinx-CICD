@@ -1,6 +1,3 @@
-#TODO - use type hinting
-#FIXME - blah blah
-
 """
 DocString Example in ModuleA
 """
