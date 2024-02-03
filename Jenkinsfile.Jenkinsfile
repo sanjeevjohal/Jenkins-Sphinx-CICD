@@ -55,6 +55,7 @@ pipeline {
                    -d ${BUILD_DIR}/doctrees ${SOURCE_DIR} ${BUILD_DIR}
                 '''
             }
+        }
         stage('Deploy-Local') {
             steps {
                 sh '''#!/bin/bash
@@ -63,32 +64,10 @@ pipeline {
                 '''
             }
             post {
-//                 always {
-//                     sh 'cat ${SPHINX_DIR}/rsync.log'
-//                 }
                 failure {
                     sh 'cat ${SPHINX_DIR}/rsync.log'
                 }
             }
-//         stage('Deploy') {
-//             steps {
-//                 sshagent(credentials: ['deployer']) {
-//                    sh '''#!/bin/bash
-//                       rm -f ${SPHINX_DIR}/rsync.log
-//                       RSYNCOPT=(-aze 'ssh -o StrictHostKeyChecking=no')
-//                       rsync "${RSYNCOPT[@]}" \
-//                       --exclude-from=${SPHINX_DIR}/rsync-exclude.txt \
-//                       --log-file=${SPHINX_DIR}/rsync.log \
-//                       --delete \
-//                       ${BUILD_DIR}/ ${DEPLOY_HOST}
-//                     '''
-//                 }
-//             }
-//             post {
-//                 failure {
-//                     sh 'cat ${SPHINX_DIR}/rsync.log'
-//                 }
-//             }
         }
     }
 }
