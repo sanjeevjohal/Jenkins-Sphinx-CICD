@@ -58,9 +58,16 @@ pipeline {
         }
         stage('Deploy-Local') {
             steps {
+                // Print the values of BUILD_DIR and DEPLOY_HOST
+                sh 'echo ${BUILD_DIR}'
+                sh 'echo ${DEPLOY_HOST}'
+
+                // Check the permissions of the DEPLOY_HOST directory
+                sh 'ls -ld ${DEPLOY_HOST}'
+
+                // Use the -v option with the cp command
                 sh '''#!/bin/bash
-                   rm -f ${SPHINX_DIR}/rsync.log
-                   cp -r ${BUILD_DIR}/ ${DEPLOY_HOST}
+                   cp -rv ${BUILD_DIR}/ ${DEPLOY_HOST}
                 '''
             }
             post {
@@ -71,3 +78,6 @@ pipeline {
         }
     }
 }
+
+// add POST sections to each stage to handle failures
+// add final POST section to handle final cleanup and communication
