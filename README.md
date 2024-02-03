@@ -66,6 +66,15 @@ ngrok http 8080
 ---
 # Projects
 ## Auto-generate Sphinx documentation
+1. Jenkins pipeline features (written in Groovy DSL - Domain Specific Language)
+   2. Install Dependencies
+      3. Agent directive to specify where the pipeline will run i.e. `docker` container
+      4. Environment directive to specify the global environment variables
+   3. Build
+      4. Stage directive is the payload with a series of steps where we first create a `venv` 
+      5. Re-build sphinx documentation
+   4. Deploy
+      5. Deploy documentation using rsync
 
 ### Links
 - [CI using docker](https://www.jareddillard.com/blog/continuous-deployment-of-a-sphinx-website-with-using-jenkins-and-docker.html)
