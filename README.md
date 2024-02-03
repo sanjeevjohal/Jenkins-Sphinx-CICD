@@ -11,8 +11,9 @@
 # Setup
 ## Configure Github integration
 
-1. Ensure this plugin [link](https://plugins.jenkins.io/github/) is enabled - should have been installed as part 
-   of the recommended plugins)
+1. Add these plugins
+   2. Ensure this plugin [link](https://plugins.jenkins.io/github/) is enabled - should have been installed as part of the recommended plugins)
+   3. `SSH Agent Plugin` - _This plugin allows you to provide SSH credentials to builds via a ssh-agent in Jenkins_
 2. Go to `Manage Jenkins` > `Configure System` > `GitHub` > `Add GitHub Server`
 3. Add your credentials - see password repositories for secret token...and **test** (NB. what access 
    was granted when the token was created, so if `public_repo` was granted then ensure the repo is 

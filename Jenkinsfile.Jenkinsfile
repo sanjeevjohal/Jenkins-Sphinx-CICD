@@ -2,20 +2,20 @@ pipeline {
     agent {
         dockerfile {
           filename "Dockerfile"
-          args "-u root" //needed to get around permission issues
+          args "-u root" // root is necessary for virtualenv
         }
     }
     environment {
         SPHINX_DIR  = '.'
         BUILD_DIR   = './_built'
         SOURCE_DIR  = './source'
-        DEPLOY_HOST = 'deployer@www.example.com:/path/to/docs/'
+        // DEPLOY_HOST = 'deployer@www.example.com:/path/to/docs/'
+        // deploy to local directory for testing
+        DEPLOY_HOST = '/tmp/docs/'
     }
     stages {
         stage('Install Dependencies') {
             steps {
-                // virtualenv may not be necessary with root,
-                // but I still think it's a good idea.
                 sh '''
                    virtualenv pyenv
                    . pyenv/bin/activate
