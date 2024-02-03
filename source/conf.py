@@ -5,6 +5,7 @@
 
 import os
 import sys
+import time
 
 # -- Path setup --------------------------------------------------------------
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -38,7 +39,10 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = []
 
-
+# Add the rst_epilog configuration here
+rst_epilog = """
+.. |date| replace:: {0}
+""".format(time.strftime('%Y-%m-%d %H:%M:%S'))
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
