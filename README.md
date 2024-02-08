@@ -16,8 +16,8 @@
    3. `SSH Agent Plugin` - _This plugin allows you to provide SSH credentials to builds via a ssh-agent in Jenkins_
 2. Go to `Manage Jenkins` > `Configure System` > `GitHub` > `Add GitHub Server`
 3. Add your credentials - see password repositories for secret token...and **test** (NB. what access 
-   was granted when the token was created, so if `public_repo` was granted then ensure the repo is 
-   **public**)
+   was granted when the token was created, so if `private_repo` was granted then ensure the repo is 
+   **private**) (NB. don't make this public otherwise it gets picked up by SIE-CIDC)
 4. Could let jenkins manage the hook which will create a webhook in the repository but to do manually
    5. Generate a ssh key pair
    6. Add the public key to the repository
