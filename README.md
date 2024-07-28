@@ -1,8 +1,5 @@
 # Links
 - see this [YT](https://www.youtube.com/watch?v=jSm0YZ-NQAc)
-- see this local Pycharm project readme [link]
-  (/Users/sjohal/OneDrive/PycharmProjects/cafeday/Jenkins-docker-local/README.md) to see how to 
-  install a local instance of Jenkins
 - [Getting started Jenkins docs](https://www.jenkins.io/pipeline/getting-started-pipelines/)
 - [Jenkins User handbook](https://www.jenkins.io/doc/book/pipeline/getting-started/)
 - [ngrok webhooks](https://ngrok.com/docs/integrations/github/webhooks/)
