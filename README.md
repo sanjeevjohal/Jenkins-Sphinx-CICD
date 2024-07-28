@@ -1,3 +1,8 @@
+# Summary
+
+This creates and uses a local instance of Jenkins to then demo how git webhooks could be used to trigger Sphinx documentation update on a git push.
+
+
 # Links
 - see this [YT](https://www.youtube.com/watch?v=jSm0YZ-NQAc)
 - [Getting started Jenkins docs](https://www.jenkins.io/pipeline/getting-started-pipelines/)
